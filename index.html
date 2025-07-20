@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para a Princesa</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffe6ec;
+      overflow: hidden;
+    }
+
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 30px,
+        #f98dbb 30px,
+        #f98dbb 35px
+      );
+      z-index: -1;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2.5em;
+      color: #a30045;
+      margin-top: 100px;
+      text-shadow: 2px 2px 5px #ffffff;
+    }
+
+    .center-button {
+      display: block;
+      margin: 30px auto;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      background: linear-gradient(to right, #f478b5, #fba3c9);
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    .corner-image {
+      width: 120px;
+      position: absolute;
+      background: white;
+      border: 3px solid #f98dbb;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      color: #d4006f;
+    }
+
+    .corner-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .top-left { top: 30px; left: 30px; }
+    .top-right { top: 30px; right: 30px; }
+    .bottom-left { bottom: 30px; left: 30px; }
+    .bottom-right { bottom: 30px; right: 30px; }
+
+    .poem-container {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 30px;
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      font-size: 1em;
+      overflow-y: auto;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="corner-image top-left"><img src="foto1.jpg" alt="Foto 1"><br>Nossa Foto</div>
+  <div class="corner-image top-right"><img src="foto2.jpg" alt="Foto 2"><br>Nós Dois</div>
+  <div class="corner-image bottom-left"><img src="foto3.jpg" alt="Foto 3"><br>Momentos</div>
+  <div class="corner-image bottom-right"><img src="foto4.jpg" alt="Foto 4"><br>Juntos</div>
+
+  <h1 class="title">para a princesa de cambridge</h1>
+  <button class="center-button" onclick="showPoem()">♥ Clique Aqui ♥</button>
+
+  <div class="poem-container" id="poem">
+    ontem a gente saiu pra jantar
+    e eu achei que você não queria me beijar
+    mas, na verdade,
+    era só eu tropeçando em mim de novo
+    ficando "gaizo",
+    me recolhendo feito quem já espera um não antes do sim
+
+    você me ensinou a comer lamen
+    me mostrou que o caldo tem que ser respeitado, não só bebido
+    e eu fui ali, aprendendo
+    entre um gole e outro, um olhar e outro
+
+    eu  pedi chá gelado de gengibre, 
+    mas que parecia perfume
+    você fez careta no primeiro gole
+    lembrou de uma mulher do passado
+    que te dava gengibre pra mascar
+    (e eu anotei mentalmente: "nunca mais gengibre")
+
+    voltei pra casa com mais dúvidas do que talheres
+    e hoje, mesmo sem saber lidar com açúcar,
+    fui atrás dos ingredientes
+    pra fazer morango do amor
+
+    sou um cozinheiro decente
+    mas com doce, eu erro o ponto, o tempo e o tato
+    ainda assim, encaro o risco de queimar tudo
+    porque, por você, vale a panela suja
+    vale a língua queimada
+    vale parecer ridículo
+
+    tem gente que oferece flores
+    eu entrego falhas embrulhadas em papel alumínio
+    corações derretidos no micro-ondas
+    tentativas com gosto de afeto
+    e morango com cobertura torta
+
+    porque eu sou esse caos –
+    mas com gosto de você
+
+    e entre erros de leitura e açúcar mascavo
+    só queria dizer:
+    mesmo quando fico pequeno demais pra caber no próprio peito
+    mesmo quando me saboto antes do beijo
+    eu tô aqui.
+    te querendo.
+    te cozinhando.
+    te escrevendo.
+
+    porque tudo o que eu faço pra você,
+    ainda é o que eu faço de mais bonito.
+    e mesmo quando não for minha especialidade,
+    mesmo quando eu não estiver na minha melhor versão,
+    você vai receber o melhor de mim
+    porque pra você,
+    eu nunca entrego menos do que tudo.
+  </div>
+
+  <audio id="bgMusic" loop autoplay>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function showPoem() {
+      document.querySelector('.center-button').style.display = 'none';
+      document.querySelector('.title').style.display = 'none';
+      document.getElementById('poem').style.display = 'block';
+      document.getElementById('bgMusic').play();
+    }
+  </script>
+</body>
+</html>
